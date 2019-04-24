@@ -23,7 +23,7 @@ public class RestfulWebServicesApplication {
 
 	}
 
-	// foi configurado no application.properties
+// foi configurado no application.properties
 //	@Bean
 //	public ResourceBundleMessageSource messageSource() {
 //		ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
