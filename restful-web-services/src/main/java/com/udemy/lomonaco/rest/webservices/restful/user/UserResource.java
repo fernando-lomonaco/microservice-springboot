@@ -22,7 +22,8 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-@Api(value ="Endpoint usuario")
+
+@Api(value = "Endpoint usuario")
 @RestController
 public class UserResource {
 
