@@ -1,14 +1,15 @@
 package com.udemy.lomonaco.rest.webservices.restful.filtering;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonFilter;
 
 // forma estatica e hardcode
 //@JsonIgnoreProperties(value = {"field1", "field2"})
+@JsonFilter("SomeBeanFilter")
 public class SomeBean {
 
 	private String field1;
 	private String field2;
-	@JsonIgnore
+	//@JsonIgnore
 	private String field3;
 
 	public SomeBean(String field1, String field2, String field3) {
