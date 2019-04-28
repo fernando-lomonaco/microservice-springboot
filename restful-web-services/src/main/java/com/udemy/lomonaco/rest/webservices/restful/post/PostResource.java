@@ -12,6 +12,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.udemy.lomonaco.rest.webservices.restful.user.User;
+
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
+@Api(value = "Endpoint posts")
 @RestController
 public class PostResource {
 
@@ -19,6 +25,7 @@ public class PostResource {
 	private PostDaoService service;
 
 	@GetMapping(path = "/users/{userId}/posts/{id}")
+	@ApiOperation(value = "Post do usuario")
 	public Post postRetrieve(@PathVariable int userId, @PathVariable int id) {
 		Post post = service.findByIdAndUserId(id, userId);
 		if (post == null) {
@@ -28,6 +35,7 @@ public class PostResource {
 	}
 
 	@GetMapping(path = "/users/{userId}/posts")
+	@ApiOperation(value = "Lista de todos post do usuario")
 	public List<Post> postRetrieveOfUser(@PathVariable int userId) {
 		List<Post> post = service.findAllPostOfUser(userId);
 		if (post.isEmpty()) {
