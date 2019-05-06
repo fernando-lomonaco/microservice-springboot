@@ -2,6 +2,9 @@ package com.udemy.lomonaco.rest.webservices.restful.user;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
@@ -9,8 +12,11 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 @ApiModel(description = "Detalhes sobre o usuario")
+@Entity
 public class User {
 
+	@Id
+	@GeneratedValue
 	private Integer id;
 	@Size(min = 2, message = "Nome deve ter ao menos 2 caracteres")
 	@ApiModelProperty(notes = "Nome deve ter ao menos 2 caracteres")
